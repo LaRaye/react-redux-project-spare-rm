@@ -16,3 +16,5 @@ const stayReducer = (state = { stays: [], loading: false }, action) => {
       return state;
   }
 }
+
+export default stayReducer;
