@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
+import { fetchStays } from '../actions/stays';
+import { connect } from 'react-redux';
 
 class StaysList extends Component {
+
+  componentDidMount() {
+    this.props.fetchStays()
+  }
+
   render() {
     return(
       <div>
@@ -10,4 +17,7 @@ class StaysList extends Component {
   }
 }
 
-export default StaysList;
+export default connect(
+  null,
+  { fetchStays }
+  )(StaysList);
