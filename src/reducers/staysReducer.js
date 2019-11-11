@@ -3,7 +3,7 @@ const staysReducer = (state = { stays: [], loading: false }, action) => {
     case 'LOADING_STAYS':
       return {
         ...state,
-        stays: action.stays,
+        stays: [...state.stays],
         loading: true
       }
     case 'ADD_STAYS':
