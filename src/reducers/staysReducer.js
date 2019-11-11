@@ -1,4 +1,4 @@
-const stayReducer = (state = { stays: [], loading: false }, action) => {
+const staysReducer = (state = { stays: [], loading: false }, action) => {
   switch (action.type) {
     case 'LOADING_STAYS':
       return {
@@ -17,4 +17,4 @@ const stayReducer = (state = { stays: [], loading: false }, action) => {
   }
 }
 
-export default stayReducer;
+export default staysReducer;
