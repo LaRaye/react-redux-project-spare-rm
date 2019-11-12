@@ -7,3 +7,5 @@ export const fetchStays = () => {
     .then(stayData => {dispatch({ type: 'ADD_STAYS', stays: stayData })})
   }
 }
+
+export const createStay = () => {}

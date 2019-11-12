@@ -1,6 +1,6 @@
-import React { Component } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createStay } from '../action/stays';
+import { createStay } from '../actions/stays';
 import StayForm from '../components/StayForm';
 
 class NewStay extends Component {
