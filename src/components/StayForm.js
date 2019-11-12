@@ -44,6 +44,7 @@ class StayForm extends React.Component {
           <label>Amenities:</label>
           <input type="text" name="amenities" value={this.props.formData.amenities} onChange={event => this.props.handleChange(event)}/>
 
+          <button type="submit">List a New Stay</button>
         </form>
       </div>
     )
