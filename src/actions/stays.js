@@ -1,9 +1,9 @@
-export function fetchStays() {
+export const fetchStays = () => {
   return (dispatch) => {
-    dispatch({type: 'LOADING_STAYS'})
+    dispatch({ type: 'LOADING_STAYS' })
 
-    fetch()
-    .then(response => return response.json())
+    fetch('http://localhost:3001/stays')
+    .then(response => response.json())
     .then(stayData => {dispatch({ type: 'ADD_STAYS', stays: stayData })})
   }
 }
