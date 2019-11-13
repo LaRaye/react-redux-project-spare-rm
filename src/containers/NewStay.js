@@ -12,7 +12,7 @@ class NewStay extends Component {
     cost: 0,
     title: "",
     location: "",
-    type: "",
+    stay_type: "",
     number_of_guests: 0,
     bedrooms: 0,
     baths: 0,
