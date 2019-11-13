@@ -26,8 +26,8 @@ class StayForm extends React.Component {
           <label>Location:</label>
           <input type="text" name="location" value={this.props.formData.location} onChange={event => this.props.handleChange(event)}/>
 
-          <label>Type:</label>
-          <input type="text" name="type" value={this.props.formData.type} onChange={event => this.props.handleChange(event)}/>
+          <label>Type of Stay:</label>
+          <input type="text" name="stay_type" value={this.props.formData.stay_type} onChange={event => this.props.handleChange(event)}/>
 
           <label>Number of Guests Permitted:</label>
           <input type="text" name="number_of_guests" value={this.props.formData.number_of_guests} onChange={event => this.props.handleChange(event)}/>
