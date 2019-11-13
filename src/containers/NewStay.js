@@ -26,12 +26,18 @@ class NewStay extends Component {
     })
   }
 
+  handleSubmit = event => {
+    event.preventDefault()
+    this.props.createStay(this.state)
+  }
+
   render() {
     return (
       <div>
         <StayForm
           formData={this.state}
           handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
         />
       </div>
     )
