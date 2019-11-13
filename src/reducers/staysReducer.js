@@ -12,7 +12,13 @@ const staysReducer = (state = { stays: [], loading: false }, action) => {
         stays: action.stays,
         loading: false
       }
-    case 'CREATE_STAY':
+    case 'CREATING_NEW_STAY':
+      return {
+        ...state,
+        stays: [...state.stays],
+        loading: true
+      }
+    case 'CREATED_STAY':
       debugger
       return {
         ...state,
