@@ -26,3 +26,19 @@ export const createStay = (stayObject) => {
     .then(stay => {dispatch({ type: 'CREATED_STAY', stay: stay })})
   }
 }
+
+export const deleteStay = (stay_id) => {
+  return (dispatch) => {
+    dispatch({ type: 'DELETING_STAY' })
+
+    fetch('http://localhost:3001/stays', {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      }
+    })
+    .then(response => response.json())
+    .then(stay_id => {dispatch({ type: 'DELETED_STAY', stay_id: stay_id })})
+  }
+}

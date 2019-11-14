@@ -1,26 +1,40 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux';
+import { deleteStay } from '../actions/stays';
 
-const Stay = (props) => {
-  if (!props.stay) {
-    return <p>Loading...</p>
+class Stay extends Component {
+
+  render() {
+
+    if (!this.props.stay) {
+      return <p>Loading...</p>
+    }
+
+    if(this.props.stay && !this.props.found) {
+      return <p>Sorry, we cannot locate this Stay</p>;
+    }
+
+    return (
+      <div>
+        <h1>{this.props.stay.title}</h1>
+        <button>Remove This Stay</button>
+      </div>
+    )
   }
-
-// what if stay does not exist?
-
-  return (
-    <div>
-      <h1>{props.stay.title}</h1>
-    </div>
-  )
 }
 
 const mapStateToProps = (state, props) => {
   const id = parseInt(props.match.params.id);
-  const stay = state.stays.filter(stay => stay.id === id)[0];
+  const stay = state.stays.filter(stay => stay.id === id)[0] || {};
+  const found = Object.keys(stay).length > 1;
+
   return {
-    stay: stay
+    stay: stay,
+    found: found
   };
 };
 
-export default connect(mapStateToProps)(Stay);
+export default connect(
+  mapStateToProps,
+  { deleteStay }
+)(Stay);
