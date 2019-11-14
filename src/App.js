@@ -3,10 +3,11 @@ import './App.css';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Home from './components/Home';
 import StaysList from './containers/StaysList';
+import Stay from './components/Stay';
 import NewStay from './containers/NewStay';
 import { connect } from 'react-redux';
 import { fetchStays } from './actions/stays';
-import Stay from './components/Stay';
+
 
 class App extends Component {
 

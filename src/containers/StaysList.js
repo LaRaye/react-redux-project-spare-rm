@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { fetchStays } from '../actions/stays';
 import { connect } from 'react-redux';
 
 class StaysList extends Component {
