@@ -19,7 +19,6 @@ const staysReducer = (state = { stays: [], loading: false }, action) => {
         loading: true
       }
     case 'CREATED_STAY':
-      debugger
       return {
         ...state,
         stays: [...state.stays, action.stay],

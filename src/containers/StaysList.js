@@ -4,10 +4,6 @@ import { connect } from 'react-redux';
 
 class StaysList extends Component {
 
-  componentDidMount() {
-    this.props.fetchStays()
-  }
-
   render() {
     console.log(this.props.stays)
     if (this.props.stays.length === 0) {
@@ -29,7 +25,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(
-  mapStateToProps,
-  { fetchStays }
-)(StaysList);
+export default connect(mapStateToProps)(StaysList);
