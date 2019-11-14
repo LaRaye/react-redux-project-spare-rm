@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import { Link  } from 'react-router-dom';
 class StaysList extends Component {
 
   render() {
@@ -12,7 +12,10 @@ class StaysList extends Component {
     return(
       <div>
         <h1>Stays</h1>
-        {this.props.stays.map(stay => <p>{stay.title}</p>)}
+        {this.props.stays.map(stay =>
+          <p>
+            <Link key={stay.id} to={`/stays/${stay.id}`} >{stay.title}</Link>
+          </p>)}
       </div>
     )
   }
