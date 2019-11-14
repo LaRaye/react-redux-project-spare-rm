@@ -27,7 +27,7 @@ const staysReducer = (state = { stays: [], loading: false }, action) => {
     case 'DELETE_STAY':
       return {
         ...state,
-        stays: state.stays.filter(stay => stay.id !== action.payload)
+        stays: state.stays.filter(stay => stay.id !== action.payload),
         loading: false
       }
     default:
