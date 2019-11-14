@@ -25,4 +25,10 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(StaysList);
+const mapDispatchToProps = dispatch => {
+  return {
+    delete: id => dispatch({type: 'DELETE_STAY', payload: id })
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(StaysList);
