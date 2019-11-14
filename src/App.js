@@ -6,6 +6,7 @@ import StaysList from './containers/StaysList';
 import NewStay from './containers/NewStay';
 import { connect } from 'react-redux';
 import { fetchStays } from './actions/stays';
+import Stay from './components/Stay';
 
 class App extends Component {
 
@@ -20,6 +21,7 @@ class App extends Component {
           <Route exact path="/" component={ Home } />
           <Route path="/stays" component={ StaysList } />
           <Route path="/stays/new" component={ NewStay } />
+          <Route path="/stays/:id" component={ Stay } />
         </Router>
       </div>
     );
