@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from './components/Home';
 import StaysList from './containers/StaysList';
 import NewStay from './containers/NewStay';
+import EditStay from './containers/EditStay';
 import Stay from './components/Stay';
 import Navbar from './components/Navbar';
 import { connect } from 'react-redux';
@@ -20,11 +21,14 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-          <Navbar />
-            <Route exact path="/" component={ Home } />
-            <Route exact path="/stays" component={ StaysList } />
-            <Route exact path="/stays/:id" component={ Stay } />
-            <Route exact path="/stays/new" component={ NewStay } />
+            <Navbar />
+              <Switch>
+                <Route exact path="/" component={ Home } />
+                <Route exact path="/stays" component={ StaysList } />
+                <Route path="/stays/new" component={ NewStay } />
+                <Route path="/stays/:id" component={ Stay } />
+                <Route path="/stays/:id/edit" component={ EditStay } />
+              </Switch>
         </Router>
       </div>
     );

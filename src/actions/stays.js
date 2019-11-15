@@ -45,3 +45,9 @@ export const deleteStay = (id, history) => {
     })
   }
 }
+
+export const editStay = () => {
+  return () => {
+    
+  }
+}
