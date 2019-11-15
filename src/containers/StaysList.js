@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link  } from 'react-router-dom';
+import StayCard from '../components/StayCard';
 
 class StaysList extends Component {
 
@@ -13,10 +13,15 @@ class StaysList extends Component {
     return(
       <div>
         <h1>Stays</h1>
-        {this.props.stays.map(stay =>
-          <p>
-            <Link key={stay.id} to={`/stays/${stay.id}`} >{stay.title}</Link>
-          </p>)}
+        <div>
+          {this.props.stays.map(stay =>
+            <StayCard
+              key={stay.id}
+              id={stay.id}
+              title={stay.title}
+            />
+          )}
+        </div>
       </div>
     )
   }
