@@ -3,9 +3,11 @@ import { connect } from 'react-redux';
 import { deleteStay } from '../actions/stays';
 
 class Stay extends Component {
+  handleDelete = () => {
+    this.props.deleteStay(this.props.stay.id, this.props.history)
+  }
 
   render() {
-
     if (!this.props.stay) {
       return <p>Loading...</p>
     }
@@ -17,7 +19,7 @@ class Stay extends Component {
     return (
       <div>
         <h1>{this.props.stay.title}</h1>
-        <button>Remove This Stay</button>
+        <button onClick={this.handleDelete}>Remove This Stay</button>
       </div>
     )
   }

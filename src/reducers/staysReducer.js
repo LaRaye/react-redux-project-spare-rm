@@ -24,10 +24,16 @@ const staysReducer = (state = { stays: [], loading: false }, action) => {
         stays: [...state.stays, action.stay],
         loading: false
       }
-    case 'DELETE_STAY':
+    case 'DELETING_STAY':
       return {
         ...state,
-        stays: state.stays.filter(stay => stay.id !== action.payload),
+        stays: [...state.stays],
+        loading: true
+      }
+    case 'DELETED_STAY':
+      return {
+        ...state,
+        stays: state.stays.filter(stay => stay.id !== action.stay_id),
         loading: false
       }
     default:

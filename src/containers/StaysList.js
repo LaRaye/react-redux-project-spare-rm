@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link  } from 'react-router-dom';
+
 class StaysList extends Component {
 
   render() {
@@ -27,10 +28,4 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    delete: id => dispatch({type: 'DELETE_STAY', payload: id })
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(StaysList);
+export default connect(mapStateToProps)(StaysList);
