@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { deleteStay } from '../actions/stays';
+import StayShowPage from '../components/StayShowPage';
 
 class StayShowContainer extends Component {
   handleDelete = () => {
@@ -18,8 +19,12 @@ class StayShowContainer extends Component {
 
     return (
       <div>
-        <h1>{this.props.stay.title}</h1>
-        <button onClick={this.handleDelete}>Remove This Stay</button>
+        <StayShowPage
+          key={this.props.stay.id}
+          id={this.props.stay.id}
+          title={this.props.stay.title}
+          handleDelete={this.handleDelete}
+        />
       </div>
     )
   }
