@@ -31,9 +31,11 @@ const staysReducer = (state = { stays: [], loading: false }, action) => {
         loading: true
       }
     case 'DELETED_STAY':
+      const new_stays = state.stays.filter(stay => stay.id !== action.stay_id)
+
       return {
         ...state,
-        stays: state.stays.filter(stay => stay.id !== action.stay_id),
+        stays: new_stays,
         loading: false
       }
     default:

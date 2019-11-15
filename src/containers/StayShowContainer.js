@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { deleteStay } from '../actions/stays';
 
-class Stay extends Component {
+class StayShowContainer extends Component {
   handleDelete = () => {
     this.props.deleteStay(this.props.stay.id, this.props.history)
   }
@@ -39,4 +39,4 @@ const mapStateToProps = (state, props) => {
 export default connect(
   mapStateToProps,
   { deleteStay }
-)(Stay);
+)(StayShowContainer);
