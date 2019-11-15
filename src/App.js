@@ -26,8 +26,8 @@ class App extends Component {
                 <Route exact path="/" component={ Home } />
                 <Route exact path="/stays" component={ StaysList } />
                 <Route path="/stays/new" component={ NewStay } />
-                <Route path="/stays/:id" component={ Stay } />
                 <Route path="/stays/:id/edit" component={ EditStay } />
+                <Route path="/stays/:id" component={ Stay } />
               </Switch>
         </Router>
       </div>
