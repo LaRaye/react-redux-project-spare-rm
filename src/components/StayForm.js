@@ -5,6 +5,7 @@ class StayForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.props.handleSubmit}>
+
           <label>Host First Name:</label>
           <input type="text" name="host_first_name" value={this.props.formData.host_first_name} onChange={event => this.props.handleChange(event)}/>
 
