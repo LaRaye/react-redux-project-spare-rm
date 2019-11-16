@@ -22,7 +22,7 @@ export const LargeCardWrapper = styled.div`
 
 export const CardHeader = styled.header`
   padding-top: 32px;
-  padding-bottom: 32px;
+  padding-bottom: 15px;
 `;
 
 export const CardHeading = styled.h4`
@@ -65,6 +65,7 @@ export const CardInput = styled.input`
   border-bottom: 1px solid #ddd;
   border-left: 0;
   transition: border-bottom-color 0.25s ease-in;
+  text-align: center;
 
   &:focus {
     border-bottom-color: #e5195f;

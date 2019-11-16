@@ -43,17 +43,17 @@ class StayForm extends React.Component {
 
               <CardFieldset>
                 <CardText>Number of Guests Permitted:</CardText>
-                <CardInput type="text" name="number_of_guests" value={this.props.formData.number_of_guests} onChange={event => this.props.handleChange(event)}/>
+                <CardInput type="number" name="number_of_guests" value={this.props.formData.number_of_guests} onChange={event => this.props.handleChange(event)}/>
               </CardFieldset>
 
               <CardFieldset>
                 <CardText>Number of Bedrooms:</CardText>
-                <CardInput type="text" name="bedrooms" value={this.props.formData.bedrooms} onChange={event => this.props.handleChange(event)}/>
+                <CardInput type="number" name="bedrooms" value={this.props.formData.bedrooms} onChange={event => this.props.handleChange(event)}/>
               </CardFieldset>
 
               <CardFieldset>
                 <CardText>Number of Baths:</CardText>
-                <CardInput type="text" name="baths" value={this.props.formData.baths} onChange={event => this.props.handleChange(event)}/>
+                <CardInput type="number" name="baths" value={this.props.formData.baths} onChange={event => this.props.handleChange(event)}/>
               </CardFieldset>
 
               <CardFieldset>
@@ -66,7 +66,9 @@ class StayForm extends React.Component {
                 <CardInput type="text" name="amenities" value={this.props.formData.amenities} onChange={event => this.props.handleChange(event)}/>
               </CardFieldset>
 
-              <CardButton type="submit">List a New Stay</CardButton>
+              <CardFieldset>
+                <CardButton type="submit">List a New Stay</CardButton>
+              </CardFieldset>
             </form>
           </div>
         </CardBody>
