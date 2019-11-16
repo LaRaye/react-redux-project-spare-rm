@@ -28,7 +28,7 @@ class NewStay extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.createStay(this.state)
+    this.props.createStay(this.state, this.props.history)
   }
 
   render() {

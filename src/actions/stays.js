@@ -8,7 +8,7 @@ export const fetchStays = () => {
   }
 }
 
-export const createStay = (stayObject) => {
+export const createStay = (stayObject, history) => {
   console.log(stayObject)
 
   return (dispatch) => {
@@ -23,7 +23,10 @@ export const createStay = (stayObject) => {
       body: JSON.stringify({ stay: stayObject })
     })
     .then(response => response.json())
-    .then(stay => {dispatch({ type: 'CREATED_STAY', stay: stay })})
+    .then(stay => {
+      dispatch({ type: 'CREATED_STAY', stay: stay });
+      history.push(`/stays/${stay.id}`);
+    })
   }
 }
 

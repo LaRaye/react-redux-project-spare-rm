@@ -4,8 +4,6 @@ import {
   CardHeader,
   CardHeading,
   CardBody,
-  CardFieldset,
-  CardInput,
   CardText,
   CardButton
 } from "./CardStyle";
