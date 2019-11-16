@@ -23,6 +23,14 @@ class StayShowContainer extends Component {
           key={this.props.stay.id}
           id={this.props.stay.id}
           title={this.props.stay.title}
+          cost={this.props.stay.cost}
+          location={this.props.stay.location}
+          stay_type={this.props.stay.stay_type}
+          number_of_guests={this.props.stay.number_of_guests}
+          bedrooms={this.props.stay.bedrooms}
+          baths={this.props.stay.baths}
+          about={this.props.stay.about}
+          amenities={this.props.stay.amenities}
           handleDelete={this.handleDelete}
         />
       </div>

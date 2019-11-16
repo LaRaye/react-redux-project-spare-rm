@@ -1,13 +1,39 @@
 import React from 'react';
+import {
+  LargeCardWrapper,
+  CardHeader,
+  CardHeading,
+  CardBody,
+  CardFieldset,
+  CardInput,
+  CardText,
+  CardButton
+} from "./CardStyle";
 
 const StayShowPage = (props) => {
   return (
-    <div>
-      <h1>
-        {props.title}
-      </h1>
-      <button onClick={props.handleDelete} >Remove This Stay</button>
-    </div>
+    <LargeCardWrapper>
+      <div>
+        <CardHeader>
+          <CardHeading>{props.title}</CardHeading>
+        </CardHeader>
+
+        <CardBody>
+          <CardText>
+            <p>{props.location}</p>
+            <p><strong>${props.cost} / night</strong></p>
+            <p>{props.stay_type}</p>
+            <p>up to {props.number_of_guests} guests</p>
+            <p>{props.bedrooms} bedrooms</p>
+            <p>{props.baths} baths</p>
+            <p>{props.about}</p>
+            <p>{props.amenities}</p>
+          </CardText>
+        </CardBody>
+
+        <CardButton onClick={props.handleDelete} >Remove This Stay</CardButton>
+      </div>
+    </LargeCardWrapper>
   )
 }
 
