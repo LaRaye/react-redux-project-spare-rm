@@ -19,6 +19,8 @@ class StaysList extends Component {
               key={stay.id}
               id={stay.id}
               title={stay.title}
+              cost={stay.cost}
+              location={stay.location}
             />
           )}
         </div>
