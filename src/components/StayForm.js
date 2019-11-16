@@ -1,53 +1,76 @@
 import React from 'react';
+import {
+  LargeCardWrapper,
+  CardHeader,
+  CardHeading,
+  CardBody,
+  CardFieldset,
+  CardInput,
+  CardText,
+  CardButton
+} from "./CardStyle";
 
 class StayForm extends React.Component {
   render() {
     return (
-      <div>
-        <form onSubmit={this.props.handleSubmit}>
+      <LargeCardWrapper>
+        <CardHeader>
+          <CardHeading>List A New Stay Below</CardHeading>
+        </CardHeader>
+        <CardBody>
+          <div>
+            <form onSubmit={this.props.handleSubmit}>
 
-          <label>Host First Name:</label>
-          <input type="text" name="host_first_name" value={this.props.formData.host_first_name} onChange={event => this.props.handleChange(event)}/>
+              <CardFieldset>
+                <CardText>Title of Stay:</CardText>
+                <CardInput type="text" name="title" value={this.props.formData.title} onChange={event => this.props.handleChange(event)}/>
+              </CardFieldset>
 
-          <label>Host Last Name:</label>
-          <input type="text" name="host_last_name" value={this.props.formData.host_last_name} onChange={event => this.props.handleChange(event)}/>
+              <CardFieldset>
+                <CardText>Cost(in dollars) Per Night:</CardText>
+                <CardInput type="number" name="cost" value={this.props.formData.cost} onChange={event => this.props.handleChange(event)}/>
+              </CardFieldset>
 
-          <label>Host Email:</label>
-          <input type="text" name="host_email" value={this.props.formData.host_email} onChange={event => this.props.handleChange(event)}/>
+              <CardFieldset>
+                <CardText>Location:</CardText>
+                <CardInput type="text" name="location" value={this.props.formData.location} onChange={event => this.props.handleChange(event)}/>
+              </CardFieldset>
 
-          <label>Host Phone:</label>
-          <input type="text" name="host_phone" value={this.props.formData.host_phone} onChange={event => this.props.handleChange(event)}/>
+              <CardFieldset>
+                <CardText>Type of Stay (i.e. entire home, single room, etc.):</CardText>
+                <CardInput type="text" name="stay_type" value={this.props.formData.stay_type} onChange={event => this.props.handleChange(event)}/>
+              </CardFieldset>
 
-          <label>Title:</label>
-          <input type="text" name="title" value={this.props.formData.title} onChange={event => this.props.handleChange(event)}/>
+              <CardFieldset>
+                <CardText>Number of Guests Permitted:</CardText>
+                <CardInput type="text" name="number_of_guests" value={this.props.formData.number_of_guests} onChange={event => this.props.handleChange(event)}/>
+              </CardFieldset>
 
-          <label>Cost per Night (in dollars):</label>
-          <input type="number" name="cost" value={this.props.formData.cost} onChange={event => this.props.handleChange(event)}/>
+              <CardFieldset>
+                <CardText>Number of Bedrooms:</CardText>
+                <CardInput type="text" name="bedrooms" value={this.props.formData.bedrooms} onChange={event => this.props.handleChange(event)}/>
+              </CardFieldset>
 
-          <label>Location:</label>
-          <input type="text" name="location" value={this.props.formData.location} onChange={event => this.props.handleChange(event)}/>
+              <CardFieldset>
+                <CardText>Number of Baths:</CardText>
+                <CardInput type="text" name="baths" value={this.props.formData.baths} onChange={event => this.props.handleChange(event)}/>
+              </CardFieldset>
 
-          <label>Type of Stay:</label>
-          <input type="text" name="stay_type" value={this.props.formData.stay_type} onChange={event => this.props.handleChange(event)}/>
+              <CardFieldset>
+                <CardText>About:</CardText>
+                <CardInput type="text" name="about" value={this.props.formData.about} onChange={event => this.props.handleChange(event)}/>
+              </CardFieldset>
 
-          <label>Number of Guests Permitted:</label>
-          <input type="text" name="number_of_guests" value={this.props.formData.number_of_guests} onChange={event => this.props.handleChange(event)}/>
+              <CardFieldset>
+                <CardText>Amenities:</CardText>
+                <CardInput type="text" name="amenities" value={this.props.formData.amenities} onChange={event => this.props.handleChange(event)}/>
+              </CardFieldset>
 
-          <label>Bedrooms:</label>
-          <input type="text" name="bedrooms" value={this.props.formData.bedrooms} onChange={event => this.props.handleChange(event)}/>
-
-          <label>Baths:</label>
-          <input type="text" name="baths" value={this.props.formData.baths} onChange={event => this.props.handleChange(event)}/>
-
-          <label>About:</label>
-          <input type="text" name="about" value={this.props.formData.about} onChange={event => this.props.handleChange(event)}/>
-
-          <label>Amenities:</label>
-          <input type="text" name="amenities" value={this.props.formData.amenities} onChange={event => this.props.handleChange(event)}/>
-
-          <button type="submit">List a New Stay</button>
-        </form>
-      </div>
+              <CardButton type="submit">List a New Stay</CardButton>
+            </form>
+          </div>
+        </CardBody>
+      </LargeCardWrapper>
     )
   }
 }

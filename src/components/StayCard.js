@@ -5,9 +5,7 @@ import {
   CardHeader,
   CardHeading,
   CardBody,
-  CardText,
-  CardButton,
-  CardLink
+  CardText
 } from "./CardStyle";
 
 const StayCard = (props) => {
