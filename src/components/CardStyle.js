@@ -63,37 +63,6 @@ export const CardInput = styled.input`
   }
 `;
 
-export const CardIcon = styled.span`
-  color: #666;
-  cursor: pointer;
-  opacity: .25;
-  transition: opacity .25s ease-in;
-
-  &:hover {
-    opacity: .95;
-  }
-
-  ${props =>
-    props.big &&
-    css`
-      font-size: 26px;
-    `}
-
-  ${props =>
-    props.eye &&
-    css`
-      position: absolute;
-      top: 8px;
-      right: 0;
-    `}
-
-  ${props =>
-    props.small &&
-    css`
-      font-size: 14px;
-    `}
-`;
-
 export const CardText = styled.small`
   padding-top: 8px;
   display: block;
@@ -101,24 +70,6 @@ export const CardText = styled.small`
   font-size: 12px;
   text-align: center;
   text-transform: uppercase;
-`;
-
-export const CardOptions = styled.ul`
-  padding: 0;
-  margin: 16px 0 8px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  list-style-type: none;
-`;
-
-export const CardOptionsItem = styled.li`
-  &:nth-of-type(n + 2) {
-    margin-left: 16px;
-  }
 `;
 
 export const CardButton = styled.button`
