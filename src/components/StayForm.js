@@ -15,7 +15,7 @@ class StayForm extends React.Component {
     return (
       <LargeCardWrapper>
         <CardHeader>
-          <CardHeading>List A New Stay Below</CardHeading>
+          <CardHeading>List A Stay Below</CardHeading>
         </CardHeader>
         <CardBody>
           <div>
@@ -67,7 +67,7 @@ class StayForm extends React.Component {
               </CardFieldset>
 
               <CardFieldset>
-                <CardButton type="submit">List a New Stay</CardButton>
+                <CardButton type="submit">List Stay</CardButton>
               </CardFieldset>
             </form>
           </div>

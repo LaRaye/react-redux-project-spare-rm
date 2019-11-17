@@ -49,8 +49,24 @@ export const deleteStay = (id, history) => {
   }
 }
 
-export const editStay = () => {
-  return () => {
+export const editStay = (stayObject, id, history) => {
+  console.log(stayObject)
 
+  return (dispatch) => {
+    dispatch({ type: 'UPDATING_STAY' })
+
+    fetch(`http://localhost:3001/stays/${id}`, {
+      method: "PATCH",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ stay: stayObject })
+    })
+    .then(response => response.json())
+    .then(stay => {
+      dispatch({ type: 'UPDATED_STAY', stay: stay });
+      history.push(`/stays/${stay.id}`);
+    })
   }
 }

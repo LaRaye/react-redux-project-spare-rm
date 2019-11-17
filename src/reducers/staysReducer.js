@@ -38,6 +38,26 @@ const staysReducer = (state = { stays: [], loading: false }, action) => {
         stays: new_stays,
         loading: false
       }
+    case 'UPDATING_STAY':
+      return {
+        ...state,
+        stays: [...state.stays],
+        loading: true
+      }
+    case 'UPDATED_STAY':
+      const updated_stays = state.stays.map(stay => {
+        if (stay.id === action.stay.id) {
+          return action.stay;
+        } else {
+          return stay;
+        }
+      })
+
+      return {
+        ...state,
+        stays: updated_stays,
+        loading: false
+      }
     default:
       return state;
   }
