@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+export const Grid = styled.div`
+  display: grid
+  grid-template-columns: repeat(2, 3fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+`;
+
 export const CardWrapper = styled.div`
   overflow: hidden;
   padding: 0 0 32px;
