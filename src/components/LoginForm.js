@@ -19,21 +19,21 @@ class LoginForm extends Component {
 
         <CardBody>
           <div className="LoginForm" >
-            <form>
+            <form onSubmit={this.props.handleSubmit} >
               <CardFieldset>
-                <CardInput placeholder="Username" type="text" required />
+                <CardInput placeholder="Username" type="text" name="username" required onChange={event => this.props.handleChange(event)}/>
               </CardFieldset>
 
               <CardFieldset>
-                <CardInput placeholder="E-mail" type="text" required />
+                <CardInput placeholder="E-mail" type="text" name="email" required onChange={event => this.props.handleChange(event)}/>
               </CardFieldset>
 
               <CardFieldset>
-                <CardInput placeholder="Password" type="password" required />
+                <CardInput placeholder="Password" type="password" name="password" required onChange={event => this.props.handleChange(event)}/>
               </CardFieldset>
 
               <CardFieldset>
-                <CardButton type="button">Sign Up</CardButton>
+                <CardButton type="submit">Login</CardButton>
               </CardFieldset>
             </form>
           </div>
