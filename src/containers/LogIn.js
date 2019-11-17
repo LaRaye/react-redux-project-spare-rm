@@ -7,8 +7,7 @@ import {
   CardFieldset,
   CardInput,
   CardButton
-} from "./CardStyle";
-import { connect } from 'react-redux';
+} from "../components/CardStyle";
 
 class LogIn extends Component {
   render () {
@@ -26,11 +25,11 @@ class LogIn extends Component {
               </CardFieldset>
 
               <CardFieldset>
-                <CardInput placeholder="E-mail" type="text" name="email" required onChange={event => this.props.handleChange(event)}/>
+                <CardInput placeholder="E-mail" type="text" name="email" value={this.props.email} required onChange={event => this.props.handleChange(event)}/>
               </CardFieldset>
 
               <CardFieldset>
-                <CardInput placeholder="Password" type="password" name="password" required onChange={event => this.props.handleChange(event)}/>
+                <CardInput placeholder="Password" type="password" name="password" value={this.props.password} required onChange={event => this.props.handleChange(event)}/>
               </CardFieldset>
 
               <CardFieldset>
@@ -44,14 +43,5 @@ class LogIn extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    currentUser: state.currentUser,
-    loginForm: {
-      email: state.loginForm.email,
-      password: state.loginForm.password
-    }
-  }
-}
 
-export default connect(mapStateToProps)(LogIn);
+export default (LogIn);

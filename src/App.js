@@ -9,7 +9,7 @@ import StayShowContainer from './containers/StayShowContainer';
 import Navbar from './components/Navbar';
 import { connect } from 'react-redux';
 import { fetchStays } from './actions/stays';
-import { userLogIn } from '../actions/users';
+import { userLogIn } from './actions/users';
 
 class App extends Component {
 
@@ -52,7 +52,12 @@ class App extends Component {
                 <Route
                   exact path="/"
                   render={(props) =>
-                    <LogIn {...props} handleSubmit={this.handleSubmit} handleChange={this.handleChange} />
+                    <LogIn
+                      email={this.state.loginForm.email}
+                      password={this.state.loginForm.password}
+                      handleSubmit={this.handleSubmit}
+                      handleChange={this.handleChange}
+                    />
                   }
                 />
                 <Route exact path="/stays" component= { StaysList } />
