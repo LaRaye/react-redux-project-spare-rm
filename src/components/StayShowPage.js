@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link  } from 'react-router-dom';
 import {
   LargeCardWrapper,
   CardHeader,
@@ -30,6 +31,7 @@ const StayShowPage = (props) => {
         </CardBody>
 
         <CardButton onClick={props.handleDelete} >Remove This Stay</CardButton>
+        <Link to={`/stays/${props.id}/edit`} ><CardText>Or Would You Like to Make Changes to This Stay?</CardText></Link>
       </div>
     </LargeCardWrapper>
   )
