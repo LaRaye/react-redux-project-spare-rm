@@ -13,14 +13,6 @@ import { fetchStays } from './actions/stays';
 
 class App extends Component {
 
-  constructor(props) {
-    super(props)
-    
-    this.state = {
-      currentUser: null,
-    }
-  }
-
   componentDidMount() {
     this.props.fetchStays()
   }
