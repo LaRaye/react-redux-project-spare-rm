@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   LargeCardWrapper,
   CardHeader,
@@ -10,7 +10,7 @@ import {
   CardButton
 } from "./CardStyle";
 
-class StayForm extends React.Component {
+class StayForm extends Component {
   render() {
     return (
       <LargeCardWrapper>

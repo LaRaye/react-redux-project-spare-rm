@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Home from './components/Home';
+import Home from './containers/Home';
 import StaysList from './containers/StaysList';
 import NewStay from './containers/NewStay';
 import EditStay from './containers/EditStay';
@@ -12,6 +12,14 @@ import { fetchStays } from './actions/stays';
 
 
 class App extends Component {
+
+  constructor(props) {
+    super(props)
+    
+    this.state = {
+      currentUser: null,
+    }
+  }
 
   componentDidMount() {
     this.props.fetchStays()
