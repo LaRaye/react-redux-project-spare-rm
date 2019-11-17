@@ -84,7 +84,8 @@ export const CardText = styled.small`
 
 export const CardButton = styled.button`
   display: block;
-  width: 100%;
+  margin: auto;
+  width: 60%;
   padding: 12px 0;
   font-family: inherit;
   font-size: 14px;

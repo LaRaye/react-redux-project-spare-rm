@@ -27,11 +27,11 @@ const StayShowPage = (props) => {
             <p>{props.baths} baths</p>
             <p>{props.about}</p>
             <p>{props.amenities}</p>
+
+            <CardButton onClick={props.handleDelete} >Remove This Stay</CardButton>
+            <Link to={`/stays/${props.id}/edit`} ><CardText>Or Would You Like to Make Changes to This Stay?</CardText></Link>
           </CardText>
         </CardBody>
-
-        <CardButton onClick={props.handleDelete} >Remove This Stay</CardButton>
-        <Link to={`/stays/${props.id}/edit`} ><CardText>Or Would You Like to Make Changes to This Stay?</CardText></Link>
       </div>
     </LargeCardWrapper>
   )
