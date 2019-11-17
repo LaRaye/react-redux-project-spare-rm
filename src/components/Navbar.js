@@ -5,6 +5,8 @@ import styled from 'styled-components';
 const StyledNav = styled.nav `
   li {
     list-style: none
+    font-family: Quicksand, arial, sans-serif;
+    font-weight: bold;
   }
 
   ul {
