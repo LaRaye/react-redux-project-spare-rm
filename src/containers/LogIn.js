@@ -8,13 +8,14 @@ import {
   CardInput,
   CardButton
 } from "./CardStyle";
+import { connect } from 'react-redux';
 
-class LoginForm extends Component {
+class LogIn extends Component {
   render () {
     return (
       <CardWrapper>
         <CardHeader>
-          <CardHeading>Sign in</CardHeading>
+          <CardHeading>Welcome, Sign in Below</CardHeading>
         </CardHeader>
 
         <CardBody>
@@ -43,4 +44,14 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm;
+const mapStateToProps = state => {
+  return {
+    currentUser: state.currentUser,
+    loginForm: {
+      email: state.loginForm.email,
+      password: state.loginForm.password
+    }
+  }
+}
+
+export default connect(mapStateToProps)(LogIn);

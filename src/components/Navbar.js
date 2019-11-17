@@ -16,15 +16,18 @@ const StyledNav = styled.nav `
 `
 
 const Navbar = () => (
-  <StyledNav>
-    <nav>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/stays">Stays</Link></li>
-        <li><Link to="/stays/new">List a Stay</Link></li>
-      </ul>
-    </nav>
-  </StyledNav>
+
+  return (
+    <StyledNav>
+      <nav>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/stays">Stays</Link></li>
+          <li><Link to="/stays/new">List a Stay</Link></li>
+        </ul>
+      </nav>
+    </StyledNav>
+  )
 )
 
 export default Navbar;
