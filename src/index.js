@@ -8,7 +8,7 @@ import App from './App';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import * as serviceWorker from './serviceWorker';
-import { combineReducers } from "redux";
+// import { combineReducers } from "redux";
 
 // const rootReducer = combineReducers({
 //   stays: staysReducer,
