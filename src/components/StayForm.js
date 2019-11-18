@@ -23,17 +23,17 @@ class StayForm extends Component {
 
               <CardFieldset>
                 <CardText>Title of Stay:</CardText>
-                <CardInput type="text" name="title" value={this.props.formData.title} onChange={event => this.props.handleChange(event)}/>
+                <CardInput required type="text" name="title" value={this.props.formData.title} onChange={event => this.props.handleChange(event)}/>
               </CardFieldset>
 
               <CardFieldset>
                 <CardText>Cost(in dollars) Per Night:</CardText>
-                <CardInput type="number" name="cost" value={this.props.formData.cost} onChange={event => this.props.handleChange(event)}/>
+                <CardInput required type="number" name="cost" value={this.props.formData.cost} onChange={event => this.props.handleChange(event)}/>
               </CardFieldset>
 
               <CardFieldset>
                 <CardText>Location:</CardText>
-                <CardInput type="text" name="location" value={this.props.formData.location} onChange={event => this.props.handleChange(event)}/>
+                <CardInput required type="text" name="location" value={this.props.formData.location} onChange={event => this.props.handleChange(event)}/>
               </CardFieldset>
 
               <CardFieldset>
