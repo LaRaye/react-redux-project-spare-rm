@@ -5,10 +5,6 @@ import StayForm from '../components/StayForm';
 
 class NewStay extends Component {
   state = {
-    host_first_name: "",
-    host_last_name: "",
-    host_email: "",
-    host_phone: 0,
     cost: 0,
     title: "",
     location: "",

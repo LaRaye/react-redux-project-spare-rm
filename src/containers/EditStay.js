@@ -8,10 +8,6 @@ class EditStay extends Component {
     super(props)
 
     this.state = {
-      host_first_name: "",
-      host_last_name: "",
-      host_email: "",
-      host_phone: 0,
       cost: 0,
       title: "",
       location: "",
@@ -26,12 +22,8 @@ class EditStay extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.stay !== this.props.stay) {
-      console.log(this.props.stay)
+
       this.setState({
-        host_first_name: this.props.stay.host_first_name,
-        host_last_name: this.props.stay.host_last_name,
-        host_email: this.props.stay.host_email,
-        host_phone: this.props.stay.host_phone,
         cost: this.props.stay.cost,
         title: this.props.stay.title,
         location: this.props.stay.location,
@@ -71,8 +63,9 @@ class EditStay extends Component {
 }
 
 const mapStateToProps = (state, props) => {
+
   const id = parseInt(props.match.params.id);
-  const stay = state.stays.filter(stay => stay.id === id)[0] || {};
+  const stay = state.stays.filter(stay => stay.id === id)[0];
 
   return {
     stay: stay
