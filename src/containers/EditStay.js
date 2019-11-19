@@ -20,21 +20,30 @@ class EditStay extends Component {
     }
   }
 
+  componentDidMount() {
+    if (this.props.stay) {
+      this.setState(this.stayFormData(this.props.stay))
+    }
+  }
+
   componentDidUpdate(prevProps) {
     if (prevProps.stay !== this.props.stay) {
-
-      this.setState({
-        cost: this.props.stay.cost,
-        title: this.props.stay.title,
-        location: this.props.stay.location,
-        stay_type: this.props.stay.stay_type,
-        number_of_guests: this.props.stay.number_of_guests,
-        bedrooms: this.props.stay.bedrooms,
-        baths: this.props.stay.baths,
-        amenities: this.props.stay.amenities,
-        about: this.props.stay.about
-      })
+      this.setState(this.stayFormData(this.props.stay))
     }
+  }
+
+  stayFormData = stay => {
+    return ({
+      cost: stay.cost,
+      title: stay.title,
+      location: stay.location,
+      stay_type: stay.stay_type,
+      number_of_guests: stay.number_of_guests,
+      bedrooms: stay.bedrooms,
+      baths: stay.baths,
+      amenities: stay.amenities,
+      about: stay.about
+    })
   }
 
   handleChange = event => {
