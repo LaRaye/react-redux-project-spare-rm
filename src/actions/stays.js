@@ -15,7 +15,7 @@ export const findStays = (stayLocation) => {
     fetch('http://localhost:3001/stays')
     .then(response => response.json())
     .then(stayData => {
-      const filteredStays = stayData.filter(stay => stay.location === stayLocation)
+      const filteredStays = stayData.filter(stay => stay.location.toLowerCase() === stayLocation.toLowerCase())
 
       dispatch({ type: 'ADD_FILTERED_STAYS', filteredStays: filteredStays })
     })

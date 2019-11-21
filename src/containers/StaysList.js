@@ -13,8 +13,18 @@ class StaysList extends Component {
     this.state = {
       stays: [],
       searchInput: "",
-      filteredStays: []
+      filteredStays: [],
+      completedSearch: false
     }
+  }
+
+  componentDidMount(state) {
+    this.setState({
+      ...state,
+      stays: this.props.stays,
+      filteredStays: this.props.filteredStays,
+      completedSearch: this.props.completedSearch
+    })
   }
 
   handleChange = event => {
@@ -36,29 +46,30 @@ class StaysList extends Component {
       return <p>Loading...</p>
     }
 
-    return(
+    return (
       <div>
         <h1>Stays</h1>
 
-        <SearchBar
-          searchInput={this.state.searchInput}
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-        />
+          <SearchBar
+            searchInput={this.state.searchInput}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+          />
 
-        <div>
-          <Grid>
-          {this.props.stays.map(stay =>
-            <StayCard
-              key={stay.id}
-              id={stay.id}
-              title={stay.title}
-              cost={stay.cost}
-              location={stay.location}
-            />
-          )}
-          </Grid>
-        </div>
+          <div>
+            <Grid>
+              {this.props.stays.map(stay =>
+                <StayCard
+                  key={stay.id}
+                  id={stay.id}
+                  title={stay.title}
+                  cost={stay.cost}
+                  location={stay.location}
+                />
+              )}
+            </Grid>
+          </div>
+
       </div>
     )
   }
@@ -67,8 +78,9 @@ class StaysList extends Component {
 const mapStateToProps = state => {
   return {
     stays: state.stays,
-    filteredStays: state.filteredStays
+    filteredStays: state.filteredStays,
+    completedSearch: state.completedSearch
   }
 }
 
-export default connect(mapStateToProps)(StaysList);
+export default connect(mapStateToProps, { findStays } )(StaysList);
