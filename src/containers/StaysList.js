@@ -1,45 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import StayCard from '../components/StayCard';
-import SearchBar from '../components/SearchBar';
-import { findStays } from '../actions/stays';
 import { Grid } from "../components/CardStyle";
-import FilteredStaysList from "./FilteredStaysList";
 
 class StaysList extends Component {
-
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      stays: [],
-      searchInput: "",
-      filteredStays: [],
-      completedSearch: false
-    }
-  }
-
-  componentDidMount(state) {
-    this.setState({
-      ...state,
-      stays: this.props.stays,
-      filteredStays: this.props.filteredStays,
-      completedSearch: this.props.completedSearch
-    })
-  }
-
-  handleChange = event => {
-    this.setState({
-      ...this.state,
-      searchInput: event.target.value
-    })
-  }
-
-  handleSubmit = event => {
-    event.preventDefault()
-    this.props.findStays(this.state.searchInput)
-  }
-
 
   render() {
     console.log(this.props.stays)
@@ -48,33 +12,10 @@ class StaysList extends Component {
       return <p>Loading...</p>
     }
 
-    // if (this.state.completedSearch && this.state.filteredStays.length === 0) {
-    //   return (
-    //     <div>
-    //       <h1>Stays</h1>
-    //
-    //         <SearchBar
-    //           searchInput={this.state.searchInput}
-    //           handleChange={this.handleChange}
-    //           handleSubmit={this.handleSubmit}
-    //         />
-    //
-    //         // <FilteredStaysList completedSearch={this.state.completedSearch} filteredStays={this.state.filteredStays} />
-    //   )
-    // }
-
     return (
       <div>
         <h1>Stays</h1>
-
-          <SearchBar
-            searchInput={this.state.searchInput}
-            handleChange={this.handleChange}
-            handleSubmit={this.handleSubmit}
-          />
-
           <div>
-
             <Grid>
               {this.props.stays.map(stay =>
                 <StayCard
@@ -101,4 +42,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { findStays } )(StaysList);
+export default connect(mapStateToProps)(StaysList);
