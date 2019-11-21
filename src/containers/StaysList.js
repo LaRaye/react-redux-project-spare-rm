@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import StayCard from '../components/StayCard';
+import SearchBar from '../components/SearchBar';
 import { Grid } from "../components/CardStyle";
 
 class StaysList extends Component {
@@ -14,6 +15,7 @@ class StaysList extends Component {
     return(
       <div>
         <h1>Stays</h1>
+        <SearchBar />
         <div>
           <Grid>
           {this.props.stays.map(stay =>
