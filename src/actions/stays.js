@@ -8,6 +8,13 @@ export const fetchStays = () => {
   }
 }
 
+export const findStays = () => {
+  return (dispatch) => {
+
+    
+  }
+}
+
 export const createStay = (stayObject, history) => {
   console.log(stayObject)
 

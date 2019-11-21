@@ -2,9 +2,32 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import StayCard from '../components/StayCard';
 import SearchBar from '../components/SearchBar';
+import { findStays } from '../actions/stays';
 import { Grid } from "../components/CardStyle";
 
 class StaysList extends Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      stays: [],
+      searchInput: ""
+    }
+  }
+
+  handleChange = event => {
+    this.setState({
+      ...this.state,
+      searchInput: event.target.value
+    })
+  }
+
+  handleSubmit = event => {
+    event.preventDefault()
+    this.props.findStays()
+  }
+
 
   render() {
     console.log(this.props.stays)
@@ -15,7 +38,13 @@ class StaysList extends Component {
     return(
       <div>
         <h1>Stays</h1>
-        <SearchBar />
+
+        <SearchBar
+          searchInput={this.state.searchInput}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+        />
+
         <div>
           <Grid>
           {this.props.stays.map(stay =>
