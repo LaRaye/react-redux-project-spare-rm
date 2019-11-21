@@ -12,7 +12,8 @@ class StaysList extends Component {
 
     this.state = {
       stays: [],
-      searchInput: ""
+      searchInput: "",
+      filteredStays: []
     }
   }
 
@@ -25,7 +26,7 @@ class StaysList extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.findStays()
+    this.props.findStays(this.state.searchInput)
   }
 
 
@@ -65,7 +66,8 @@ class StaysList extends Component {
 
 const mapStateToProps = state => {
   return {
-    stays: state.stays
+    stays: state.stays,
+    filteredStays: state.filteredStays
   }
 }
 

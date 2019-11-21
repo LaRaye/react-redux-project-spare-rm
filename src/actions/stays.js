@@ -8,10 +8,17 @@ export const fetchStays = () => {
   }
 }
 
-export const findStays = () => {
+export const findStays = (stayLocation) => {
   return (dispatch) => {
+    dispatch({ type: 'FINDING_STAYS' })
 
-    
+    fetch('http://localhost:3001/stays')
+    .then(response => response.json())
+    .then(stayData => {
+      const filteredStays = stayData.filter(stay => stay.location === stayLocation)
+
+      dispatch({ type: 'ADD_FILTERED_STAYS', filteredStays: filteredStays })
+    })
   }
 }
 

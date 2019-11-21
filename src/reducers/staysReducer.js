@@ -1,4 +1,4 @@
-const staysReducer = (state = { stays: [], loading: false }, action) => {
+const staysReducer = (state = { stays: [], filteredStays: [], loading: false }, action) => {
   switch (action.type) {
     case 'LOADING_STAYS':
       return {
@@ -10,6 +10,18 @@ const staysReducer = (state = { stays: [], loading: false }, action) => {
       return {
         ...state,
         stays: action.stays,
+        loading: false
+      }
+    case 'FINDING_STAYS':
+      return {
+        ...state,
+        stays: [...state.stays],
+        loading: true
+      }
+    case 'FINDING_STAYS':
+      return {
+        ...state,
+        filteredStays: action.filteredStays,
         loading: false
       }
     case 'CREATING_NEW_STAY':
