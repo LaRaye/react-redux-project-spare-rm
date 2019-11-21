@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import StayCard from '../components/StayCard';
+import { Grid } from "../components/CardStyle";
 
 class FilteredStaysList extends Component {
   render () {
@@ -9,26 +10,20 @@ class FilteredStaysList extends Component {
 
     return (
       <div>
-        <h1>Stays</h1>
-
-          <div>
-            <Grid>
-              {this.props.filteredStays.map(stay =>
-                <StayCard
-                  key={stay.id}
-                  id={stay.id}
-                  title={stay.title}
-                  cost={stay.cost}
-                  location={stay.location}
-                />
-              )}
-            </Grid>
-          </div>
-
+        <Grid>
+          {this.props.filteredStays.map(stay =>
+            <StayCard
+              key={stay.id}
+              id={stay.id}
+              title={stay.title}
+              cost={stay.cost}
+              location={stay.location}
+            />
+          )}
+        </Grid>
       </div>
     )
   }
-
 }
 
 export default FilteredStaysList;

@@ -4,6 +4,7 @@ import StayCard from '../components/StayCard';
 import SearchBar from '../components/SearchBar';
 import { findStays } from '../actions/stays';
 import { Grid } from "../components/CardStyle";
+import FilteredStaysList from "./FilteredStaysList";
 
 class StaysList extends Component {
 
@@ -42,9 +43,25 @@ class StaysList extends Component {
 
   render() {
     console.log(this.props.stays)
+
     if (this.props.stays.length === 0) {
       return <p>Loading...</p>
     }
+
+    // if (this.state.completedSearch && this.state.filteredStays.length === 0) {
+    //   return (
+    //     <div>
+    //       <h1>Stays</h1>
+    //
+    //         <SearchBar
+    //           searchInput={this.state.searchInput}
+    //           handleChange={this.handleChange}
+    //           handleSubmit={this.handleSubmit}
+    //         />
+    //
+    //         // <FilteredStaysList completedSearch={this.state.completedSearch} filteredStays={this.state.filteredStays} />
+    //   )
+    // }
 
     return (
       <div>
@@ -57,6 +74,7 @@ class StaysList extends Component {
           />
 
           <div>
+
             <Grid>
               {this.props.stays.map(stay =>
                 <StayCard
