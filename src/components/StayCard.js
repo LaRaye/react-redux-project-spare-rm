@@ -7,25 +7,28 @@ import {
   CardBody,
   CardText
 } from "./CardStyle";
+import LikeButton from './LikeButton';
 
 const StayCard = (props) => {
   return (
-    <Link key={props.id} to={`/stays/${props.id}`} >
+
       <div className="stay-card">
         <CardWrapper>
           <CardHeader>
-            <CardHeading>{props.title}</CardHeading>
+            <Link key={props.id} to={`/stays/${props.id}`} ><CardHeading>{props.title}</CardHeading></Link>
           </CardHeader>
 
           <CardBody>
             <CardText>
               <p>{props.location}</p>
               <p><strong>${props.cost} / night</strong></p>
+
+              <LikeButton />
+
             </CardText>
           </CardBody>
         </CardWrapper>
       </div>
-    </Link>
   )
 }
 
