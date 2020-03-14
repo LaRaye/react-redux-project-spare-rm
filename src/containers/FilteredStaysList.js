@@ -3,8 +3,9 @@ import StayCard from '../components/StayCard';
 import { Grid } from "../components/CardStyle";
 
 class FilteredStaysList extends Component {
+
   render () {
-    if (this.props.filteredStays.length === 0) {
+    if (this.props.completedSearch && this.props.filteredStays.length === 0) {
       return (<p>Sorry we cannot find any stays at that location</p>)
     }
 

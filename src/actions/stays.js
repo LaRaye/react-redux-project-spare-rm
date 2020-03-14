@@ -8,21 +8,6 @@ export const fetchStays = () => {
   }
 }
 
-export const findStays = (stayLocation) => {
-  return (dispatch) => {
-    dispatch({ type: 'FINDING_STAYS' })
-
-    fetch('http://localhost:3001/stays')
-    .then(response => response.json())
-    .then(stayData => {
-      /*fix for locations with whitespace*/
-      const filteredStays = stayData.filter(stay => stay.location.toLowerCase() === stayLocation.toLowerCase())
-
-      dispatch({ type: 'ADD_FILTERED_STAYS', filteredStays: filteredStays })
-    })
-  }
-}
-
 export const createStay = (stayObject, history) => {
   console.log(stayObject)
 

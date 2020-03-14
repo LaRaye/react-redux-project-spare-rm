@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from './components/Home';
 // import LogIn from './containers/LogIn';
-import StaysList from './containers/StaysList';
+import StaysFilterWrapper from './containers/StaysFilterWrapper';
 import NewStay from './containers/NewStay';
 import EditStay from './containers/EditStay';
 import StayShowContainer from './containers/StayShowContainer';
@@ -62,7 +62,7 @@ class App extends Component {
               //   }
             // />*/}
                 <Route exact path="/" component= { Home } />
-                <Route exact path="/stays" component= { StaysList } />
+                <Route exact path="/stays" component= { StaysFilterWrapper } />
                 <Route path="/stays/new" component={ NewStay } />
                 <Route path="/stays/:id/edit" component={ EditStay } />
                 <Route path="/stays/:id" component={ StayShowContainer } />

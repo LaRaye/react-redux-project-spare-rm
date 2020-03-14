@@ -14,21 +14,17 @@ class StaysList extends Component {
 
     return (
       <div>
-        <h1>Stays</h1>
-          <div>
-            <Grid>
-              {this.props.stays.map(stay =>
-                <StayCard
-                  key={stay.id}
-                  id={stay.id}
-                  title={stay.title}
-                  cost={stay.cost}
-                  location={stay.location}
-                />
-              )}
-            </Grid>
-          </div>
-
+        <Grid>
+          {this.props.stays.map(stay =>
+            <StayCard
+              key={stay.id}
+              id={stay.id}
+              title={stay.title}
+              cost={stay.cost}
+              location={stay.location}
+            />
+          )}
+        </Grid>
       </div>
     )
   }
@@ -36,9 +32,7 @@ class StaysList extends Component {
 
 const mapStateToProps = state => {
   return {
-    stays: state.stays,
-    filteredStays: state.filteredStays,
-    completedSearch: state.completedSearch
+    stays: state.stays
   }
 }
 

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import SearchBar from '../components/SearchBar';
-import { findStays } from '../actions/stays';
 import StaysList from "./StaysList";
 import FilteredStaysList from "./FilteredStaysList";
 
@@ -10,7 +9,6 @@ class StaysFilterWrapper extends Component {
     super(props)
 
     this.state = {
-      stays: [],
       searchInput: "",
       filteredStays: [],
       completedSearch: false
@@ -18,11 +16,10 @@ class StaysFilterWrapper extends Component {
   }
 
   componentDidMount(state) {
+    console.log("mounted")
     this.setState({
       ...state,
-      stays: this.props.stays,
-      filteredStays: this.props.filteredStays,
-      completedSearch: this.props.completedSearch
+      completedSearch: false
     })
   }
 
@@ -35,17 +32,35 @@ class StaysFilterWrapper extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.findStays(this.state.searchInput)
+    this.filterStaysOnSearch()
+  }
+
+  filterStaysOnSearch = () => {
+
+    let myFilteredStays = this.props.stays.filter(stay => stay.location.toLowerCase() === this.state.searchInput.toLowerCase())
+
+    this.setState({
+      ...this.state,
+      filteredStays: myFilteredStays,
+      completedSearch: true
+    })
+  }
+
+  handleCompletedSearch = () => {
+    this.setState({
+      ...this.state,
+      completedSearch: false
+    })
   }
 
   render() {
-    console.log(this.props.filteredStays)
 
     if (this.props.stays.length === 0) {
       return <p>Loading...</p>
     }
 
-    if (this.state.completedSearch) {
+    if (this.state.searchInput !== "") {
+
       return (
         <div>
           <h1>Stays</h1>
@@ -58,10 +73,13 @@ class StaysFilterWrapper extends Component {
 
             <FilteredStaysList
               filteredStays={this.state.filteredStays}
+              completedSearch={this.state.completedSearch}
+              handleCompletedSearch={this.handleCompletedSearch}
             />
         </div>
       )
-    } else if {
+    } else {
+
         return (
           <div>
             <h1>Stays</h1>
@@ -72,22 +90,17 @@ class StaysFilterWrapper extends Component {
                 handleSubmit={this.handleSubmit}
               />
 
-              <StaysList
-                filteredStays={this.state.stays}
-              />
+              <StaysList />
           </div>
         )
     }
-
   }
 }
 
 const mapStateToProps = state => {
   return {
-    stays: state.stays,
-    filteredStays: state.filteredStays,
-    completedSearch: state.completedSearch
+    stays: state.stays
   }
 }
 
-export default connect(mapStateToProps, { findStays } )(StaysFilterWrapper);
+export default connect(mapStateToProps)(StaysFilterWrapper);
